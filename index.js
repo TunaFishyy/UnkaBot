@@ -25,13 +25,13 @@ const embed = new MessageEmbed()
     .setImage(images[Math.floor(Math.random()*images.length)]);
 
 client.on('messageCreate', (msg) => {
-    if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+    if (msg.author.bot) return;
 
-    if (msg.content.toLowerCase() === 'mrs') {
+    if (msg.content.toLowerCase() === 'mrs') { 
         msg.reply('Ma mrs ti')
     }
     if (msg.content.toLowerCase() === 'debelsi') {
-        msg.reply({ embeds: [embed] });
+        msg.reply('s');
     }
 })
 
