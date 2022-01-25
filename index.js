@@ -21,8 +21,7 @@ var prefix = '.'
 const embed = new MessageEmbed()
     .setColor('AQUA')
     .setTitle('Keva ti debela')
-    .setDescription('reshi')
-    .setImage(images[Math.floor(Math.random()*images.length)]);
+    .setThumbnail(images[Math.floor(Math.random()*images.length)]);
 
 client.on('messageCreate', (msg) => {
     if (msg.author.bot) return;
