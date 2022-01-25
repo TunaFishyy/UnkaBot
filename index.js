@@ -15,11 +15,6 @@ client.on('ready', () => {
 
 const images = ['https://i.imgur.com/He1yFhG.jpeg', 'https://imgur.com/gallery/O0XD03F', 'https://i.imgur.com/chiIGfLb.jpg', 'https://i.imgur.com/nP45XGvb.jpg',
                 'https://i.imgur.com/TkzGmjJb.jpg', 'https://i.imgur.com/uqJ2ci5b.jpg', 'https://i.imgur.com/fK7NYeNb.jpg', 'https://i.imgur.com/HsPuvfvb.jpg'];
-const embed = new MessageEmbed()
-    .setColor('AQUA')
-    .setTitle('Keva ti debela')
-    .setDescription('Rip BOZO L')
-    .setImage(images[Math.floor(Math.random()*images.length)]);
 
 var prefix = '.'
 
@@ -30,7 +25,9 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     if (msg.content.toLowerCase() === prefix+'debelsi') {
-        msg.reply({ embeds: [embed] });
+        msg.reply({
+            files: [images[Math.floor(Math.random()*images.length)]]
+        });
     }
 })
 
