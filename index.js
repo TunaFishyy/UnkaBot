@@ -14,8 +14,7 @@ client.on('ready', () => {
 })
 
 const images = ['https://www.imgur.com/He1yFhG.png', 'https://www.imgur.com/chiIGfLb.png', 'https://www.imgur.com/nP45XGvb.png',
-                'https://www.imgur.com/TkzGmjJb.png', 'https://www.imgur.com/uqJ2ci5b.png', 'https://www.imgur.com/fK7NYeNb.png', 
-                'https://www.imgur.com/HsPuvfvb.png'];
+                'https://www.imgur.com/TkzGmjJb.png', 'https://www.imgur.com/uqJ2ci5b.png', 'https://www.imgur.com/HsPuvfvb.png'];
 
 var prefix = '.'
 
