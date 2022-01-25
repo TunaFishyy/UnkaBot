@@ -18,11 +18,6 @@ const images = ['https://www.imgur.com/He1yFhG.png', 'https://www.imgur.com/chiI
 
 var prefix = '.'
 
-const help = new MessageEmbed()
-    .setColor('GOLD')
-    .setTitle('Help')
-    .setDescription('Prefix: **.**,komande: **debelsi** te **mrs**');
-
 client.on('messageCreate', (msg) => {
     if (msg.author.bot) return;
 
@@ -37,6 +32,10 @@ client.on('messageCreate', (msg) => {
         msg.reply({ embeds: [embed] });
     }
     else if (msg.content.toLowerCase() === prefix+'help') {
+        const help = new MessageEmbed()
+    .setColor('GOLD')
+    .setTitle('Help')
+    .setDescription('Prefix: **.**,komande: **debelsi** te **mrs**');
         msg.reply({ embeds: [help] });
     }
 })
