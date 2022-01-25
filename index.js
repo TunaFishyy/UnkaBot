@@ -17,7 +17,7 @@ var prefix = '.'
 
 client.on('messageCreate', (msg) => {
     if (msg.content.toLowerCase() === prefix+'mrs') {
-        msg.channel.send('ma mrs ti')
+        msg.channel.send('Ma mrs ti')
     }
 })
 
