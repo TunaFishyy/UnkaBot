@@ -13,10 +13,10 @@ client.on('ready', () => {
     console.log('Bot se ukljucio!')
 })
 
-var mrs = 'mrs'
+var prefix = '.'
 
 client.on('messageCreate', (msg) => {
-    if (msg.content.toLowerCase() === mrs) {
+    if (msg.content.toLowerCase() === prefix+'mrs') {
         msg.channel.send('Ma mrs ti')
     }
 })
