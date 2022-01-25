@@ -31,6 +31,7 @@ client.on('messageCreate', (msg) => {
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
         msg.channel.send({ embeds: [embed] });
+        console.log(images[Math.floor(Math.random()*images.length)]);
     }
 })
 
