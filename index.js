@@ -1,4 +1,4 @@
-import DiscordJS, { Intents, Message, MessageEmbed } from 'discord.js'
+import DiscordJS, { Channel, Intents, Message, MessageEmbed } from 'discord.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -28,7 +28,7 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
-        msg.reply('Lol',{
+        msg.channel.send('Lol',{
             files: [images[Math.floor(Math.random()*images.length)]]
         });
     }
