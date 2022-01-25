@@ -1,4 +1,5 @@
 {
+  "type": "module",	
   "name": "unkabot",
   "version": "1.0.0",
   "description": "A Bot for a private Discord server Unka.",
