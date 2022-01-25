@@ -30,7 +30,7 @@ client.on('messageCreate', (msg) => {
     if (msg.content.toLowerCase() === 'mrs') { 
         msg.reply('Ma mrs ti')
     }
-    if (msg.content.toLowerCase() === 'debelsi') {
+    else if (msg.content.toLowerCase() === 'debelsi') {
         msg.reply('s');
     }
 })
