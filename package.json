@@ -7,11 +7,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  
+  "author": "TunaFishyy",
+  "license": "ISC",
   "engines": {
     "node": ">=16.6.0"
   },
-  "author": "TunaFishyy",
-  "license": "ISC",
   "dependencies": {
     "discord.js": "^13.6.0"
   }
