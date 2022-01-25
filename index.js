@@ -19,11 +19,6 @@ const images = ['https://www.imgur.com/He1yFhG.png', 'https://www.imgur.com/chiI
 
 var prefix = '.'
 
-const embed = new MessageEmbed()
-    .setColor('AQUA')
-    .setTitle('Keva ti debela')
-    .setImage(images[Math.floor(Math.random()*images.length)]);
-
 client.on('messageCreate', (msg) => {
     if (msg.author.bot) return;
 
@@ -31,6 +26,10 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
+        const embed = new MessageEmbed()
+    .setColor('AQUA')
+    .setTitle('Keva ti debela')
+    .setImage(images[Math.floor(Math.random()*images.length)]);
         msg.channel.send({ embeds: [embed] });
     }
 })
