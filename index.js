@@ -21,7 +21,7 @@ var prefix = '.'
 const embed = new MessageEmbed()
     .setColor('AQUA')
     .setTitle('Keva ti debela')
-    .setDescription('L bozo')
+    .setDescription('reshi')
     .setImage(images[Math.floor(Math.random()*images.length)]);
 
 client.on('messageCreate', (msg) => {
@@ -31,7 +31,7 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     if (msg.content.toLowerCase() === 'debelsi') {
-        msg.reply(embed);
+        msg.reply({ embeds: [embed] });
     }
 })
 
