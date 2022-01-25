@@ -18,16 +18,20 @@ const images = ['https://i.imgur.com/He1yFhG.jpeg', 'https://imgur.com/gallery/O
 
 var prefix = '.'
 
-client.on('messageCreate', (msg) => {
-    if (msg.author.bot) return;
+const embed = new MessageEmbed()
+    .setColor('AQUA')
+    .setTitle('Keva ti debela')
+    .setDescription('L bozo')
+    .setImage(images[Math.floor(Math.random()*images.length)]);
 
-    if (msg.content.toLowerCase() === prefix+'mrs') {
+client.on('messageCreate', (msg) => {
+    if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+
+    if (msg.content.toLowerCase() === 'mrs') {
         msg.reply('Ma mrs ti')
     }
-    if (msg.content.toLowerCase() === prefix+'debelsi') {
-        msg.reply("Keva ti debela",{
-            files: [images[Math.floor(Math.random()*images.length)]]
-        });
+    if (msg.content.toLowerCase() === 'debelsi') {
+        msg.reply(embed);
     }
 })
 
