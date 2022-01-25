@@ -28,7 +28,9 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
-        msg.reply({ embeds: [embed] , files: [images[Math.random(Math.random()*images.length)]]});
+        msg.reply({
+            files: [images[Math.floor(Math.random()*images.length)]]
+        });
     }
 })
 
