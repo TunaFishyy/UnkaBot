@@ -1,11 +1,14 @@
 {
-  "type": "module",	
+  "type": "module",
   "name": "unkabot",
   "version": "1.0.0",
   "description": "A Bot for a private Discord server Unka.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=16.6.0"
   },
   "author": "TunaFishyy",
   "license": "ISC",
