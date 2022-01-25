@@ -1,6 +1,5 @@
 import DiscordJS, { Intents, Message } from 'discord.js'
-import dotenv from 'dotenv'
-dotenv.config()
+require('dotenv').config()
 
 const client = new DiscordJS.Client({
     intents: [
