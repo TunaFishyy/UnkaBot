@@ -28,7 +28,7 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
-        msg.reply({
+        msg.reply('Lol',{
             files: [images[Math.floor(Math.random()*images.length)]]
         });
     }
