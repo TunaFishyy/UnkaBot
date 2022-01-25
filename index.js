@@ -35,7 +35,10 @@ client.on('messageCreate', (msg) => {
         const help = new MessageEmbed()
     .setColor('GOLD')
     .setTitle('Help')
-    .setDescription('Prefix: **.**'<br>'Komande: **debelsi**, **mrs**');
+    .addFields(
+        { name: 'Prefix: **.**'},
+        { name: 'Komande: **debelsi**, **mrs**'},
+    )
         msg.reply({ embeds: [help] });
     }
 })
