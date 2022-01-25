@@ -13,8 +13,8 @@ client.on('ready', () => {
     console.log('Bot se ukljucio!')
 })
 
-const images = ['https://www.i.imgur.com/He1yFhG.png', 'https://www.i.imgur.com/QMJuIcDb.png', 'https://www.i.imgur.com/chiIGfLb.png', 'https://www.i.imgur.com/nP45XGvb.png',
-                'https://www.i.imgur.com/TkzGmjJb.png', 'https://www.i.imgur.com/uqJ2ci5b.png', 'https://www.i.imgur.com/fK7NYeNb.png', 'https://www.i.imgur.com/HsPuvfvb.png'];
+const images = ['https://www.imgur.com/He1yFhG.png', 'https://www.imgur.com/QMJuIcDb.png', 'https://www.imgur.com/chiIGfLb.png', 'https://www.imgur.com/nP45XGvb.png',
+                'https://www.imgur.com/TkzGmjJb.png', 'https://www.imgur.com/uqJ2ci5b.png', 'https://www.imgur.com/fK7NYeNb.png', 'https://www.imgur.com/HsPuvfvb.png'];
 
 var prefix = '.'
 
