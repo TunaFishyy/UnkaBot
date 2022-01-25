@@ -13,8 +13,8 @@ client.on('ready', () => {
     console.log('Bot se ukljucio!')
 })
 
-const images = ['https://i.imgur.com/He1yFhG.png', 'https://i.imgur.com/QMJuIcDb.png', 'https://i.imgur.com/chiIGfLb.png', 'https://i.imgur.com/nP45XGvb.png',
-                'https://i.imgur.com/TkzGmjJb.png', 'https://i.imgur.com/uqJ2ci5b.png', 'https://i.imgur.com/fK7NYeNb.png', 'https://i.imgur.com/HsPuvfvb.png'];
+const images = ['https://www.i.imgur.com/He1yFhG.png', 'https://www.i.imgur.com/QMJuIcDb.png', 'https://www.i.imgur.com/chiIGfLb.png', 'https://www.i.imgur.com/nP45XGvb.png',
+                'https://www.i.imgur.com/TkzGmjJb.png', 'https://www.i.imgur.com/uqJ2ci5b.png', 'https://www.i.imgur.com/fK7NYeNb.png', 'https://www.i.imgur.com/HsPuvfvb.png'];
 
 var prefix = '.'
 
@@ -30,7 +30,7 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
-        await msg.channel.send({ embeds: [embed] });
+        msg.channel.send({ embeds: [embed] });
     }
 })
 
