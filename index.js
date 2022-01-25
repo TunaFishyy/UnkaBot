@@ -21,8 +21,6 @@ var prefix = '.'
 const embed = new MessageEmbed()
     .setColor('AQUA')
     .setTitle('Keva ti debela')
-    .setThumbnail(images[Math.floor(Math.random()*images.length)]);
-
 client.on('messageCreate', (msg) => {
     if (msg.author.bot) return;
 
@@ -30,7 +28,7 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
-        msg.reply({ embeds: [embed] });
+        msg.reply({ embeds: [embed] , files: [images[Math.random(Math.random()*images.length)]]});
     }
 })
 
