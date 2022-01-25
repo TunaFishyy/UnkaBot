@@ -27,11 +27,11 @@ const embed = new MessageEmbed()
 client.on('messageCreate', (msg) => {
     if (msg.author.bot) return;
 
-    if (msg.content.toLowerCase() === 'mrs') { 
+    if (msg.content.toLowerCase() === prefix+'mrs') { 
         msg.reply('Ma mrs ti')
     }
-    else if (msg.content.toLowerCase() === 'debelsi') {
-        msg.reply('s');
+    else if (msg.content.toLowerCase() === prefix+'debelsi') {
+        msg.reply({ embeds: [embed] });
     }
 })
 
