@@ -29,7 +29,7 @@ client.on('messageCreate', (msg) => {
         msg.reply('Ma mrs ti')
     }
     else if (msg.content.toLowerCase() === prefix+'debelsi') {
-        msg.channel.send();
+        msg.channel.send({ embeds: [embed] });
     }
 })
 
