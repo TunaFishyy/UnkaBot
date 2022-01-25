@@ -13,7 +13,7 @@ client.on('ready', () => {
     console.log('Bot se ukljucio!')
 })
 
-const images = ['https://i.imgur.com/He1yFhG.jpeg', 'https://i.imgur.com/QMJuIcDb.jpg', 'https://i.imgur.com/chiIGfLb.jpg', 'https://i.imgur.com/nP45XGvb.jpg',
+const images = ['https://i.imgur.com/He1yFhG.jpg', 'https://i.imgur.com/QMJuIcDb.jpg', 'https://i.imgur.com/chiIGfLb.jpg', 'https://i.imgur.com/nP45XGvb.jpg',
                 'https://i.imgur.com/TkzGmjJb.jpg', 'https://i.imgur.com/uqJ2ci5b.jpg', 'https://i.imgur.com/fK7NYeNb.jpg', 'https://i.imgur.com/HsPuvfvb.jpg'];
 
 var prefix = '.'
