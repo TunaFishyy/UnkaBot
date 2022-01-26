@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const Client = require('./Client.js');
+import Client from "./Client.js"
 
 /**
  * 
