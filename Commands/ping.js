@@ -1,4 +1,4 @@
-const Command = require("../Structures/Command.js");
+import Command from "../Structures/Command"
 
 module.exports = new Command({
     name: "ping",
