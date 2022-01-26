@@ -36,8 +36,7 @@ client.on('ready', () => {
         client.user.setPresence({
             status: 'online',
             activities: [{
-                name: arrayOfStatus[Math.floor(Math.random()*arrayOfStatus.length)],
-                type: 'WATCHING'
+                name: arrayOfStatus[Math.floor(Math.random()*arrayOfStatus.length)]
             }]
         }, 5000);
     })
