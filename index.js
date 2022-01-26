@@ -1,9 +1,9 @@
-import DJS from 'discord.js'
+import DiscordJS from 'discord.js'
 import dotenv from 'dotenv'
-import { Intents } from 'DJS'
+import { Intents } from 'discord.js'
 dotenv.config();
 
-const client = new DJS.Client({
+const client = new DiscordJS.Client({
     intents: [
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES
