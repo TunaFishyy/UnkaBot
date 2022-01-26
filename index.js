@@ -74,8 +74,8 @@ client.on('messageCreate', (msg) => {
                 .setTitle('Unka bot')
                 .setDescription('Pozdrav, javlja vam se Unka bot programiran od strane Unka developera. Trenutno je i dalje u proizvodnji no dovoljan za odlazak kod drugih servera.\n' +
                 'Trenutno nema puno stvari za zabavu, vidite ostalo pomocu **.help**\nLp, Unka');
-            msg.delete();
             msg.channel.send({ embeds: [embed] })
+            msg.delete();
         }
     }
 })
