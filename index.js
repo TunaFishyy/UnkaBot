@@ -2,7 +2,7 @@
 import dotenv from 'dotenv'
 dotenv.config();
 
-import { Client } from './Structures/Client.js';
+const Client = require('./Structures/Client.js');
 import { Command } from "./Structures/Command.js";
 const client = new Client();
 const fs = require('fs');
