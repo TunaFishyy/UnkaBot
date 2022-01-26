@@ -11,11 +11,11 @@ const client = new DiscordJS.Client({
 })
 
 client.on('ready', () => {
-    let handler = require('./command-handler');
+    let handler = ("./command-handler");
     if (handler.default) handler = handler.default
 
     handler.client
-    console.log('Bot se ukljucio.')
+    console.log('Bot is on.')
 })
 
 client.login(process.env.TOKEN)
