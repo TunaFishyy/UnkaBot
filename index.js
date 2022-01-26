@@ -78,6 +78,19 @@ client.on('messageCreate', (msg) => {
         }
         msg.delete();
     }
+    else if (msg.content.toLowerCase() === prefix+'meme') {
+        let subreddits = [
+            'memes',
+            'arabfunny'
+        ];
+        let subreddit = subreddits[Math.floor(Math.random()*subreddits.length)];
+        let img = await api(subreddit)
+        const memeEmbed = new MessageEmbed()
+            .setTitle('Smijesan meme')
+            .setImage(img);
+
+            msg.reply({ embeds: [memeEmbed] })
+    }
 })
 
 client.login(process.env.TOKEN)
