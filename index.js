@@ -10,12 +10,34 @@ const client = new DiscordJS.Client({
     ]
 })
 
+const arrayOfStatus = [
+    'Jel vama Keza krindz',
+    'M4LC0LM je debel',
+    'Dudlic ga dudla',
+    'Injox ga mece',
+    'Samo jako resi ide gas',
+    'Doni69 kid 09',
+    'Infitor ne zna igrat csgo',
+    'Pouka dana: ne igrajte wingman s Infitorom',
+    'I sit by myseeeeelf, talking to the M00ooo0OOOOOO00000000n',
+    'Nije u soldima svee',
+    'Gledam gole tete',
+    'Obavijest: Kezin KD vise nije u minusu eeeee',
+    'Marusa gleda winxice',
+    'Radi tesko cijeli daan',
+    'M4LC0LM je dobar s AWP-om, no ne i najbolji',
+    'Tutorijal za kezu: https://www.ergolink.com.au/blog/how-to-properly-hold-a-mouse-tips-for-using-a-mouse-correctly',
+    'Skremplijev ping je najbolji!!'
+]
+
 client.on('ready', () => {
     console.log('Bot se ukljucio!'),
     client.user.setPresence({
         status: 'online',
         activities: [{
-            name: 'Unka',
+            name: setInterval(() => {
+                    arrayOfStatus[Math.floor(Math.random()*arrayOfStatus.length)]
+            }, 5000),
             type: 'WATCHING'
         }]
     });
