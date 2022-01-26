@@ -1,6 +1,7 @@
 import DJS from 'discord.js'
+import dotenv from 'dotenv'
 const { Intents } = DJS
-require('dotenv/config')
+dotenv.config();
 
 const client = new DJS.Client({
     intents: [
