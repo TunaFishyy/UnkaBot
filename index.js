@@ -1,4 +1,4 @@
-const DJS = require('discord.js')
+import DJS from 'discord.js'
 const { Intents } = DJS
 require('dotenv/config')
 
