@@ -12,7 +12,13 @@ const client = new DiscordJS.Client({
 
 client.on('ready', () => {
     console.log('Bot se ukljucio!'),
-    client.user.setActivity('UNKA', { type: 'PLAYING'})
+    client.user.setPresence({
+        status: 'idle',
+        activity: {
+            name: 'Unka',
+            type: 'WATCHING'
+        }
+    });
 });
 
 const images = ['https://www.imgur.com/He1yFhG.png', 'https://www.imgur.com/chiIGfLb.png', 'https://www.imgur.com/nP45XGvb.png',
