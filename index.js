@@ -1,6 +1,7 @@
 import DiscordJS, { Channel, Intents, Message, MessageEmbed } from 'discord.js'
 import dotenv from 'dotenv'
 dotenv.config()
+const fs = require('fs');
 
 const client = new DiscordJS.Client({
     intents: [
@@ -9,8 +10,14 @@ const client = new DiscordJS.Client({
         Intents.FLAGS.GUILD_PRESENCES,
     ]
 })
+client.commands = new Collection();
+const commandFiles = fs.readdirSync('./cmds').filter(file => file.endsWith('.js'));
 
-const axios = require('axios');
+for (const file of commandFiles) {
+    const command = require('./cmds/${file}');
+
+    client.commands.set(command.data.name, command);
+}
 
 const arrayOfStatus = [
     'Jel vama Keza krindz',
@@ -81,33 +88,23 @@ client.on('messageCreate', (msg) => {
         msg.delete();
     }
     else if (msg.content.toLowerCase() === prefix+'meme') {
-        module.exports={
-            name: 'meme',
-            setDescription: 'Random Meme s Reddita',
-            /**
-             * @param {Client} client
-             * @param {CommandInteraction} interaction
-             * @param {String[]} args
-             */
-            run: async (client, interaction, args) => {
-                let res = await axios.default.get(
-                    'https://www.reddit.com/r/memes/random/.json'
-                );
-                if (!res || !res.data || !res.data.length)
-                    return interaction.reply({
-                        content: 'Error',
-                        ephemeral: true,
-                    });
-                res = res.data[0].data.children[0].data;
-                const meme = new MessageEmbed()
-                    .setTitle(res.title)
-                    .setImage(res.url)
-                    .setURL('https://www.reddit.com${res.permalink}')
-                    .setFooter(':thumbsup:${res.ups}');
-                    interaction.reply({ embeds: [meme] })
-            }
-        }
+        
     }
 })
+
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+
+	const command = client.commands.get(interaction.commandName);
+
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+	}
+});
 
 client.login(process.env.TOKEN)
