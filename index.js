@@ -67,7 +67,7 @@ client.on('messageCreate', (msg) => {
     .setDescription('Prefix: **.**\nKomande: **debelsi**, **mrs**')
         msg.reply({ embeds: [help] });
     }
-    else if (msg.content === prefix+'pozzSvima') {
+    else if (msg.content === prefix+'pozzSvima @everyone') {
         if (msg.member.guild.me.permissions.has('ADMINISTRATOR') || msg.member.guild.me.permissions.has('MANAGE_CHANNELS')) {
             const pozz = new MessageEmbed()
                 .setColor('BLURPLE')
