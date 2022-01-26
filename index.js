@@ -27,20 +27,20 @@ const arrayOfStatus = [
     'Radi tesko cijeli daan',
     'M4LC0LM je dobar s AWP-om, no ne i najbolji',
     'Tutorijal za kezu: https://www.ergolink.com.au/blog/how-to-properly-hold-a-mouse-tips-for-using-a-mouse-correctly',
-    'Skremplijev ping je najbolji!!'
+    'Skremplijev ping je najbolji!!',
 ]
 
 client.on('ready', () => {
     console.log('Bot se ukljucio!'),
-    client.user.setPresence({
-        status: 'online',
-        activities: [{
-            name: setInterval(() => {
-                    arrayOfStatus[Math.floor(Math.random()*arrayOfStatus.length)]
-            }, 5000),
-            type: 'WATCHING'
-        }]
-    });
+    setInterval(() => {
+        client.user.setPresence({
+            status: 'online',
+            activities: [{
+                name: arrayOfStatus[Math.floor(Math.random()*arrayOfStatus.length)],
+                type: 'WATCHING'
+            }]
+        }, 5000);
+    })
 });
 
 const images = ['https://www.imgur.com/He1yFhG.png', 'https://www.imgur.com/chiIGfLb.png', 'https://www.imgur.com/nP45XGvb.png',
