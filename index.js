@@ -31,15 +31,15 @@ const arrayOfStatus = [
 ]
 
 client.on('ready', () => {
-    console.log('Bot se ukljucio!'),
+    console.log('Bot se ukljucio!')
     setInterval(() => {
         client.user.setPresence({
             status: 'online',
             activities: [{
                 name: arrayOfStatus[Math.floor(Math.random()*arrayOfStatus.length)]
             }]
-        }, 5000);
-    })
+        });
+    }, 5000)
 });
 
 const images = ['https://www.imgur.com/He1yFhG.png', 'https://www.imgur.com/chiIGfLb.png', 'https://www.imgur.com/nP45XGvb.png',
