@@ -6,9 +6,11 @@ const client = new DiscordJS.Client({
     intents: [
         Intents.FLAGS.GUILDS,
         Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_PRESENCES
+        Intents.FLAGS.GUILD_PRESENCES,
     ]
 })
+
+const axios = require('axios');
 
 const arrayOfStatus = [
     'Jel vama Keza krindz',
@@ -79,17 +81,32 @@ client.on('messageCreate', (msg) => {
         msg.delete();
     }
     else if (msg.content.toLowerCase() === prefix+'meme') {
-        let subreddits = [
-            'memes',
-            'arabfunny'
-        ];
-        let subreddit = subreddits[Math.floor(Math.random()*subreddits.length)];
-        let img = await api(subreddit)
-        const memeEmbed = new MessageEmbed()
-            .setTitle('Smijesan meme')
-            .setImage(img);
-
-            msg.reply({ embeds: [memeEmbed] })
+        module.exports={
+            name: 'meme',
+            setDescription: 'Random Meme s Reddita',
+            /**
+             * @param {Client} client
+             * @param {CommandInteraction} interaction
+             * @param {String[]} args
+             */
+            run: async (client, interaction, args) => {
+                let res = await axios.default.get(
+                    'https://www.reddit.com/r/memes/random/.json'
+                );
+                if (!res || !res.data || !res.data.length)
+                    return interaction.reply({
+                        content: 'Error',
+                        ephemeral: true,
+                    });
+                res = res.data[0].data.children[0].data;
+                const meme = new MessageEmbed()
+                    .setTitle(res.title)
+                    .setImage(res.url)
+                    .setURL('https://www.reddit.com${res.permalink}')
+                    .setFooter(':thumbsup:${res.ups}');
+                    interaction.reply({ embeds: [meme] })
+            }
+        }
     }
 })
 
