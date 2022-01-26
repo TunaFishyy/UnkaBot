@@ -1,39 +1,19 @@
-import DiscordJS, { Channel, Intents, Message, MessageEmbed } from 'discord.js'
-import dotenv from 'dotenv'
-dotenv.config()
-const fs = require('fs');
+const DJS = require('discord.js')
+const { Intents } = DJS
+require('dotenv/config')
 
-const client = new DiscordJS.Client({
+const client = new DJS.Client({
     intents: [
         Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES,
-        Intents.FLAGS.GUILD_PRESENCES,
-    ]
+        Intents.FLAGS.GUILD_MESSAGES
+    ],
 })
-client.commands = new Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-    const command = require('./commands/${file}');
+client.on('ready', () => {
+    let handler = require('./command-handler')
+    if (handler.default) handler = handler.default
 
-    client.commands.set(command.data.name, command);
-}
-
-
-
-client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
-
-	const command = client.commands.get(interaction.commandName);
-
-	if (!command) return;
-
-	try {
-		await command.execute(interaction);
-	} catch (error) {
-		console.error(error);
-		return interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-	}
-});
+    handler.client
+})
 
 client.login(process.env.TOKEN)
