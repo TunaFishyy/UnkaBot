@@ -15,9 +15,10 @@ client.on('ready', () => {
 });
 
     client.user?.setPresence({
-        status: 'online',
+        status: 'idle',
         activities: [{
-            name: 'helo'
+            name: 'helo',
+            type: 'WATCHING'
         }]
     })
 
