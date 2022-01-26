@@ -1,6 +1,6 @@
 import DJS from 'discord.js'
 import dotenv from 'dotenv'
-const { Intents } = DJS
+import { Intents } from 'DJS'
 dotenv.config();
 
 const client = new DJS.Client({
@@ -11,10 +11,11 @@ const client = new DJS.Client({
 })
 
 client.on('ready', () => {
-    let handler = require('./command-handler')
+    let handler = require('./command-handler');
     if (handler.default) handler = handler.default
 
     handler.client
+    console.log('Bot se ukljucio.')
 })
 
 client.login(process.env.TOKEN)
