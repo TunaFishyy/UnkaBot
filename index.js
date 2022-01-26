@@ -1,21 +1,37 @@
-import DiscordJS from 'discord.js'
+/** @format */
 import dotenv from 'dotenv'
-import { Intents } from 'discord.js'
 dotenv.config();
 
-const client = new DiscordJS.Client({
-    intents: [
-        Intents.FLAGS.GUILDS,
-        Intents.FLAGS.GUILD_MESSAGES
-    ],
+const Client = require("./Structures/Client");
+const Command = require("./Structures/Command");
+const client = new Client();
+const fs = require('fs');
+
+
+fs.readdirSync("./Commands").filter(file => file.endsWith(".js")).forEach(file => {
+    /**
+     * @type {Command}
+     */
+    const command = require(`./Commands/${file}`);
+    console.log(`Command ${command.name} loaded`);
+    client.commands.set(command.name, command);
 })
 
 client.on('ready', () => {
-    let handler = ("./command-handler");
-    if (handler.default) handler = handler.default
-
-    handler.client
-    console.log('Bot is on.')
+    console.log('Bot is on.');
 })
 
-client.login(process.env.TOKEN)
+client.on('messageCreate', message => {
+    var prefix = '.';
+    if (!message.content.startsWith(prefix) || message.author.bot);
+
+    const args = message.content.substring(prefix.length).split(/ +/);
+
+    const command = client.commands.find(cmd => cmd.name == args[0]);
+
+    if (!command) return message.reply(`${args[0]} nije valjana komanda.`);
+
+    command.run(message, args, client);
+})
+
+client.login(process.env.TOKEN);
