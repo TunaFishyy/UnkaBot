@@ -67,6 +67,17 @@ client.on('messageCreate', (msg) => {
     .setDescription('Prefix: **.**\nKomande: **debelsi**, **mrs**')
         msg.reply({ embeds: [help] });
     }
+    else if (msg.content === prefix+'pozzSvima') {
+        if (msg.member.guild.me.permissions.has('ADMINISTRATOR') || msg.member.guild.me.permissions.has('MANAGE_CHANNELS')) {
+            const pozz = new MessageEmbed()
+                .setColor('BLURPLE')
+                .setTitle('Unka bot')
+                .setDescription('Pozdrav, javlja vam se Unka bot programiran od strane Unka developera. Trenutno je i dalje u proizvodnji no dovoljan za odlazak kod drugih servera.\n' +
+                'Trenutno nema puno stvari za zabavu, vidite ostalo pomocu **.help**\nLp, Unka');
+            msg.delete();
+            msg.channel.send({ embeds: [embed] })
+        }
+    }
 })
 
 client.login(process.env.TOKEN)
