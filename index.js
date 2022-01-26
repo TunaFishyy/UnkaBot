@@ -72,8 +72,8 @@ client.on('messageCreate', (msg) => {
             const pozz = new MessageEmbed()
                 .setColor('BLURPLE')
                 .setTitle('Unka bot')
-                .setDescription('Pozdrav, javlja vam se Unka bot programiran od strane Unka developera. Trenutno je i dalje u proizvodnji no dovoljan za odlazak kod drugih servera.\n' +
-                'Trenutno nema puno stvari za zabavu, vidite ostalo pomocu **.help**\nLp, Unka')
+                .setDescription('Pozdrav, javlja vam se Unka bot programiran od strane Unka developera.\nTrenutno je i dalje u proizvodnji no dovoljan za odlazak kod drugih servera.\n' +
+                'Ovoga trenutka nema puno stvari za zabavu, no bit ce poslije, vidite ostalo pomocu **.help**\nLp, Unka')
             msg.channel.send({ embeds: [pozz] })
             msg.delete();
         }
