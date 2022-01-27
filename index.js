@@ -13,7 +13,7 @@ client.config = config;
 client.commands = new Discord.Collection();
 
 const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
-for (const file of events)import { type } from 'os';
+for (const file of events)
  {
   const eventName = file.split(".")[0];
   const event = require(`./events/${file}`);
