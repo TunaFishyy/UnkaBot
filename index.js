@@ -33,10 +33,14 @@ client.on('messageCreate', async message => {
   if (!message.content.startsWith(config.prefix) || message.author.b) return;
 
   const args = message.content.slice(config.prefix.length).split(/ +/);
-  const command = args.shift().toLowerCase()
+  const command = args.shift().toLowerCase();
 
-  if (command == 'help') {
-      client.commands.get('help').execute(message)
+  switch (command) {
+    case 'help':
+      client.commands.get('help').execute(message);
+      break;
+    case 'mrs':
+      client.commands.get('mrs').execute(message);
   }
 })
 
