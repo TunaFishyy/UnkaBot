@@ -32,7 +32,7 @@ client.on('messageCreate', async message => {
   // Define Command Components //
   if (!message.content.startsWith(config.prefix) || message.author.b)
 
-  const args = message.content.slice(config.prefix.length).split(/ +/);
+  const args = message.content.slice(config.prefix.length).split(/ +g/);
   const command = args.shift().toLowerCase()
 
   if (command == 'help') {
