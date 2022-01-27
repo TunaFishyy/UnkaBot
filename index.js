@@ -1,37 +1,29 @@
-/** @format */
-import dotenv from 'dotenv'
-dotenv.config();
+require('dotenv').config();
+const { Client, Intents } = require("discord.js");
+const fs = require("fs");
 
-import Client from './Structures/Client.js';
-const Command = require("./Structures/Command.js");
-const client = new Client();
-import fs from 'fs';
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
+});
+const config = require("./config.json");
+// We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
+client.config = config;
+client.commands = new Discord.Collection();
 
+const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
+for (const file of events) {
+  const eventName = file.split(".")[0];
+  const event = require(`./events/${file}`);
+  client.on(eventName, event.bind(null, client));
+}
 
-fs.readdirSync("./Commands").filter(file => file.endsWith(".js")).forEach(file => {
-    /**
-     * @type {Command}
-     */
-    const command = require(`./Commands/${file}`);
-    console.log(`Command ${command.name} loaded`);
-    client.commands.set(command.name, command);
-})
+const commands = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
+for (const file of commands) {
+  const commandName = file.split(".")[0];
+  const command = require(`./commands/${file}`);
 
-client.on('ready', () => {
-    console.log('Bot is on.');
-})
-
-client.on('messageCreate', message => {
-    var prefix = '.';
-    if (!message.content.startsWith(prefix) || message.author.bot);
-
-    const args = message.content.substring(prefix.length).split(/ +/);
-
-    const command = client.commands.find(cmd => cmd.name == args[0]);
-
-    if (!command) return message.reply(`${args[0]} nije valjana komanda.`);
-
-    command.run(message, args, client);
-})
+  console.log(`Attempting to load command ${commandName}`);
+  client.commands.set(command.name, command);
+}
 
 client.login(process.env.TOKEN);
