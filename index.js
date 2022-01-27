@@ -41,6 +41,9 @@ client.on('messageCreate', async message => {
       break;
     case 'mrs':
       client.commands.get('mrs').execute(message);
+      break;
+    case 'debelsi':
+      client.commands.get('debelsi').execute(message);
   }
 })
 
