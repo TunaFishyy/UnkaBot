@@ -30,9 +30,9 @@ client.on('ready', () => {
 
 client.on('messageCreate', async message => {
   // Define Command Components //
-  if (!message.content.startsWith(config.prefix) || message.author.b)
+  if (!message.content.startsWith(config.prefix) || message.author.b) return;
 
-  const args = message.content.slice(config.prefix.length).split(/ +g/);
+  const args = message.content.slice(config.prefix.length).split(/ +/);
   const command = args.shift().toLowerCase()
 
   if (command == 'help') {
