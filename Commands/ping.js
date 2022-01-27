@@ -1,4 +1,4 @@
-import Command from "../Structures/Command"
+import { Command } from "../Structures/Command"
 
 module.exports = new Command({
     name: "ping",

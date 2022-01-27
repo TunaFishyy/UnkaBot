@@ -5,7 +5,7 @@ dotenv.config();
 const Client = require("./Structures/Client.js");
 const Command = require("./Structures/Command.js");
 const client = new Client();
-const fs = require('fs');
+import fs from 'fs';
 
 
 fs.readdirSync("./Commands").filter(file => file.endsWith(".js")).forEach(file => {
