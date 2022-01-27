@@ -8,6 +8,7 @@ const client = new Discord.Client({
 });
 const fs = require('fs');
 const { type } = require('os');
+const config = require('./config.json');
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -17,21 +18,21 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const arrayOfStatuses = ['M4LC0LM je gay', 'Dudlica ga dudla', 'PRO TIP: Ne igrajte wingman s infitorom', 'Jel vama keza krindz', 'Ico kid 011', 'Marusa gleda winxice',
+const arrayOfStatus = ['M4LC0LM je gay', 'Dudlica ga dudla', 'PRO TIP: Ne igrajte wingman s infitorom', 'Jel vama keza krindz', 'Ico kid 011', 'Marusa gleda winxice',
                          'Krtina'];
 
 client.on('ready', () => {
   console.log(`Bot is online!`);
-  client.user.setPresence({
-    activities: [{
-      name: arrayOfStatuses[Math.floor(Math.random()*arrayOfStatuses.length)]
-    }]
-  });
+  setInterval(() => {
+    client.user.setPresence({ activities: [{ name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] }] })
+}, 5000);
 });
 
 client.on('messageCreate', async message => {
   // Define Command Components //
-  const args = message.content.slice(config.pre).split(/ +/);
+  if (!message.content.startsWith(config.prefix) || message.author.b)
+
+  const args = message.content.slice(config.prefix.length).split(/ +/);
   const command = args.shift().toLowerCase()
 
   if (command == 'help') {
