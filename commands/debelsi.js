@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 const images = [
     'https://www.imgur.com/pXZHzYkb.png', 'https://www.imgur.com/TkzGmjJb.png', 'https://www.imgur.com/mLj0Snjb.png', 'https://www.imgur.com/ujp0GpXb.png',
-    'https://www.imgur.com/FQU0tXmb.png', 'https://www.imgur.com/WgS1Jeyb.png', 'https://www.imgur.com/SHCDUlub.png'
+    'https://www.imgur.com/FQU0tXmb.png', 'https://www.imgur.com/SHCDUlub.png'
 ];
 
 module.exports = {
