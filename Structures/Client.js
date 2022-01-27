@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-import Command from "./Command.js";
+import { Command } from "./Command.js";
 
 const intents = new Discord.Intents(32767);
 
