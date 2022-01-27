@@ -9,7 +9,7 @@ client.commands = new Collection();
 client.aliases = new Collection();
 client.categories = new Collection();
 
-["command"].forEach(handler => {
+["command", "events"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
 
