@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Client, Intents, Discord, Collection } = require('discord.js');
+const { Client, Intents } = require('discord.js');
 const fs = require('fs');
 
 const client = new Client({
@@ -9,7 +9,7 @@ const client = new Client({
 const config = require('./config.json');
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
 for (const file of events)
