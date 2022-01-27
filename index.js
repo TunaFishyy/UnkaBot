@@ -18,7 +18,7 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const arrayOfStatus = ['M4LC0LM je gay', 'Dudlica ga dudla', 'PRO TIP: Ne igrajte wingman s infitorom', 'Jel vama keza krindz', 'Ico kid 011', 'Marusa gleda winxice',
+const arrayOfStatus = ['M4LC0LM je gay', 'Dudlic ga dudla', 'PRO TIP: Ne igrajte wingman s infitorom', 'Jel vama keza krindz', 'Ico kid 011', 'Marusa gleda winxice',
                          'Krtina'];
 
 client.on('ready', () => {
