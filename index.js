@@ -7,13 +7,14 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
 });
 
-import config from './config.json';
+import config from './config.json' assert { type: 'json' };
 // We also need to make sure we're attaching the config to the CLIENT so it's accessible everywhere!
 client.config = config;
 client.commands = new Discord.Collection();
 
 const events = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
-for (const file of events) {
+for (const file of events)import { type } from 'os';
+ {
   const eventName = file.split(".")[0];
   const event = require(`./events/${file}`);
   client.on(eventName, event.bind(null, client));
