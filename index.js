@@ -1,7 +1,6 @@
-import dotenv from 'dotenv';
-dotenv.config();
-import { Client, Intents } from 'discord.js';
-import fs from 'fs';
+require('dotenv').config();
+const { Client, Intents } = require('discord.js');
+const fs = require('fs');
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]
