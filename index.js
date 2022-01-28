@@ -35,8 +35,11 @@ client.on('ready', () => {
     client.user.setPresence({ activities: [{
        name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)],
        type: 'PLAYING'
-      }], status: arrayOfStatus2[Math.floor(Math.random()*arrayOfStatus2.length)]
+      }]
     })
+    for (var i = 0; i < arrayOfStatus2.length; i++) {
+      client.user.setStatus(arrayOfStatus2[i]);
+    }
   }, 5000);
 });
 
