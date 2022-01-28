@@ -37,10 +37,12 @@ client.on('ready', () => {
        type: 'PLAYING'
       }]
     })
+  }, 5000);
+  setInterval(() => {
     for (var i = 0; i < arrayOfStatus2.length; i++) {
       client.user.setStatus(arrayOfStatus2[i]);
     }
-  }, 5000);
+  }, 2000);
 });
 
 client.on('messageCreate', async message => {
