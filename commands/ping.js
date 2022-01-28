@@ -9,7 +9,8 @@ module.exports = {
             .setColor('AQUA')
             .setTitle('Ping')
             .setDescription(`Tvoj ping je ${Math.floor(msg.createdAt - message.createdAt)}ms`);
+            msg.delete();
 
-        message.reply({ embeds: [embed], allowedMentions: {repliedUser: false} });
+        await message.reply({ embeds: [embed], allowedMentions: {repliedUser: false} });
     }
 }
