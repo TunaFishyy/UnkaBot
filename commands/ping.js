@@ -7,7 +7,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor('AQUA')
             .setTitle('Ping')
-            .setDescription(`Moj WebSocket ping je ${client.ws.ping}`);
+            .setDescription(`Moj WebSocket ping je ${Math.round(client.ws.ping)}`);
 
         message.reply({ embeds: [embed] });
     }
