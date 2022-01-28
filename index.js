@@ -32,12 +32,15 @@ client.on('ready', () => {
   console.log(`Bot is online!`);
   setInterval(() => {
     client.user.setPresence({ activities: [{
-       name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)],
-       type: 'PLAYING',
+       name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] 
       }]
-    }),
-    client.user.setStatus(arrayOfStatus2[Math.floor(Math.random()*arrayOfStatus2.length)]);
+  })
 }, 5000);
+    setInterval(() => {
+        for (var i = 0; i < arrayOfStatus2.length; i++) {
+          client.user.setStatus(arrayOfStatus2[i]);
+        }
+    }, 5000);
 });
 
 client.on('messageCreate', async message => {
