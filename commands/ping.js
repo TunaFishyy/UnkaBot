@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 module.exports = {
     name: 'ping',
     description: 'Prikaze ping botare',
-    execute(message) {
+    execute : async(message) => {
         const msg = await message.reply('Povezivanje...');
         const embed = new MessageEmbed()
             .setColor('AQUA')
