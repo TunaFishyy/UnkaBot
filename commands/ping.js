@@ -16,6 +16,6 @@ module.exports = {
             .setTitle('Ping')
             .setDescription(`Moj ping je ${Math.round(message.client.ws.ping)}ms`);
 
-        message.reply({ embeds: [embed] });
+        message.reply({ embeds: [embed], allowedMentions: {repliedUser: false} });
     }
 }

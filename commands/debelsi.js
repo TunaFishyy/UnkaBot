@@ -14,6 +14,6 @@ module.exports = {
             .setImage(images[Math.floor(Math.random()*images.length)])
             .setTitle('Keva ti debela');
 
-        message.reply({ embeds: [embed] });
+        message.reply({ embeds: [embed], allowedMentions: {repliedUser: false} });
     }
 }
