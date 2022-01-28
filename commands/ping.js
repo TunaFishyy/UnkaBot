@@ -8,7 +8,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor('AQUA')
             .setTitle('Ping')
-            .setDescription(`Tvoj ping je ${Math.floor(msg.createdAt - message.createdAt)-125}ms`);
+            .setDescription(`Tvoj ping je ${Date.now() - message.createdAt}ms`);
             msg.delete();
 
         await message.reply({ embeds: [embed], allowedMentions: {repliedUser: false} });
