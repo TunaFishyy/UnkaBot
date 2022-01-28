@@ -26,21 +26,17 @@ const arrayOfStatus = ['M cetiri L C nula L M',
                         'Marusa gleda winxice',
                         'Krtina',
                         'DeCkO dEbiL'];
+
 const arrayOfStatus2 = ['online', 'dnd', 'idle'];
 
 client.on('ready', () => {
   console.log(`Bot is online!`);
   setInterval(() => {
     client.user.setPresence({ activities: [{
-       name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] 
-      }]
-  })
-}, 5000);
-    setInterval(() => {
-        for (var i = 0; i < arrayOfStatus2.length; i++) {
-          client.user.setStatus(arrayOfStatus2[Math.floor(Math.random()*arrayOfStatus2.length)]);
-        }
-    }, 5000);
+       name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)]
+      }], status: arrayOfStatus2[Math.floor(Math.random()*arrayOfStatus2.length)]
+    })
+  }, 5000);
 });
 
 client.on('messageCreate', async message => {
