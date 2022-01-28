@@ -30,7 +30,7 @@ client.on('ready', () => {
 
 client.on('messageCreate', async message => {
   // Define Command Components //
-  if (!message.content.startsWith(config.prefix) || message.author.b) return;
+  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
   const args = message.content.slice(config.prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
@@ -47,7 +47,7 @@ client.on('messageCreate', async message => {
       break;
     case 'ping':
       client.commands.get('ping').execute(message);
-       
+
   }
 })
 
