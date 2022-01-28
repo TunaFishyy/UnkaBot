@@ -26,11 +26,14 @@ const arrayOfStatus = ['M cetiri L C nula L M',
                         'Marusa gleda winxice',
                         'Krtina',
                         'DeCkO dEbiL'];
+const arrayOfStatus2 = ['online', 'dnd', 'idle'];
 
 client.on('ready', () => {
   console.log(`Bot is online!`);
   setInterval(() => {
-    client.user.setPresence({ activities: [{ name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] }] })
+    client.user.setPresence({ activities: [{ name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] }], status: arrayOfStatus2[
+      Math.floor(Math.random()*arrayOfStatus2.length)
+    ] })
 }, 5000);
 });
 
