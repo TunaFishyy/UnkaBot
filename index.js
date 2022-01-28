@@ -44,6 +44,10 @@ client.on('messageCreate', async message => {
       break;
     case 'debelsi':
       client.commands.get('debelsi').execute(message);
+      break;
+    case 'ping':
+      client.commands.get('ping').execute(message);
+       
   }
 })
 
