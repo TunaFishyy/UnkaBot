@@ -61,9 +61,12 @@ const forbiddenWords = ['kurac', 'picka', 'pička', 'picko', 'pičko', 'pusi kur
                         'jeben ti mater', 'jebem ti mater', 'kurcina', 'kurčina'];
 
 client.on('messageCreate', async msg => {
-  if (msg.content.includes(forbiddenWords)) {
-    msg.channel.send('Ejjjj, nema psovanja !');
-    msg.delete();
+  for (var i = 0; i < forbidenWords.length; i++) {
+    if (message.content.includes(forbidenWords[i])) {
+      // message.content contains a forbidden word;
+      // delete message, log, etc.
+      break;
+    }
   }
 })
 
