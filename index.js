@@ -62,12 +62,12 @@ const forbiddenWords = ['kurac', 'picka', 'pička', 'picko', 'pičko', 'pusi kur
 
 client.on('messageCreate', async msg => {
   for (var i = 0; i < forbidenWords.length; i++) {
-    if (message.content.includes(forbidenWords[i])) {
-      // message.content contains a forbidden word;
-      // delete message, log, etc.
-      break;
-    }
+  if (msg.content.includes(forbidenWords[i])) {
+    // message.content contains a forbidden word;
+    // delete message, log, etc.
+    break;
   }
+}
 })
 
 client.login(process.env.TOKEN);
