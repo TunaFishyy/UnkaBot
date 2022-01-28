@@ -60,7 +60,7 @@ client.on('messageCreate', async message => {
 const forbiddenWords = ['kurac', 'picka', 'pička', 'picko', 'pičko', 'pusi kurac', 'jebi se', 'majku ti jebem', 'jebem ti majku', 'mrs u kurac', 'jeben ti majku',
                         'jeben ti mater', 'jebem ti mater', 'kurcina', 'kurčina'];
 
-client.on('messageCreate', async msg => {
+client.on('messageCreate', (msg) => {
   for (var i = 0; i < forbidenWords.length; i++) {
   if (msg.content.includes(forbidenWords[i])) {
     // message.content contains a forbidden word;
