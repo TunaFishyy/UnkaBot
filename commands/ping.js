@@ -14,7 +14,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor('AQUA')
             .setTitle('Ping')
-            .setDescription(`Moj WebSocket ping je ${Math.round(message.client.ws.ping)}`);
+            .setDescription(`Moj ping je ${Math.round(message.client.ws.ping)}ms`);
 
         message.reply({ embeds: [embed] });
     }
