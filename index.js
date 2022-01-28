@@ -42,7 +42,7 @@ client.on('ready', () => {
     for (var i = 0; i < arrayOfStatus2.length; i++) {
       client.user.setStatus(arrayOfStatus2[i]);
     }
-  }, 2000);
+  }, 5000);
 });
 
 client.on('messageCreate', async message => {
