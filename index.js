@@ -18,8 +18,14 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const arrayOfStatus = ['M4LC0LM je gay', 'Dudlic ga dudla', 'PRO TIP: Ne igrajte wingman s infitorom', 'Jel vama keza krindz', 'Ico kid 011', 'Marusa gleda winxice',
-                         'Krtina'];
+const arrayOfStatus = ['M cetiri L C nula L M',
+                        'Dudlic ga dudla',
+                        'PRO TIP: Ne igrajte wingman s infitorom',
+                        'Jel vama keza krindz', 
+                        'Ico kid 011',
+                        'Marusa gleda winxice',
+                        'Krtina',
+                        'DeCkO dEbiL'];
 
 client.on('ready', () => {
   console.log(`Bot is online!`);
