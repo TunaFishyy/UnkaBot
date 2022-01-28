@@ -66,6 +66,7 @@ client.on('messageCreate', (msg) => {
     // message.content contains a forbidden word;
     // delete message, log, etc.
     msg.delete();
+    msg.channel.send(`Ejjjj, nema psovanja 😠`);
     break;
   }
 }
