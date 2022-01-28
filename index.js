@@ -38,7 +38,7 @@ client.on('ready', () => {
 }, 5000);
     setInterval(() => {
         for (var i = 0; i < arrayOfStatus2.length; i++) {
-          client.user.setStatus(arrayOfStatus2[i]);
+          client.user.setStatus(arrayOfStatus2[Math.floor(Math.random()*arrayOfStatus2[i])]);
         }
     }, 5000);
 });
