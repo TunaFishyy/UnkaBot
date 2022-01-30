@@ -65,7 +65,7 @@ client.on('messageCreate', async message => {
 })
 
 const forbiddenWords = ['kurac', 'picka', 'pička', 'picko', 'pičko', 'pusi kurac', 'jebi se', 'majku ti jebem', 'jebem ti majku', 'mrs u kurac', 'jeben ti majku',
-                        'jeben ti mater', 'jebem ti mater', 'kurcina', 'kurčina'];
+                        'jeben ti mater', 'jebem ti mater', 'kurcina', 'kurčina', 'jeb'];
 
 client.on('messageCreate', (msg) => {
   for (var i = 0; i < forbiddenWords.length; i++) {
@@ -73,7 +73,7 @@ client.on('messageCreate', (msg) => {
     // message.content contains a forbidden word;
     // delete message, log, etc.
     msg.delete();
-    msg.channel.send(`Ejjjj, nema psovanja 😠`);
+    msg.channel.send(`Ejjjj, nema psovanja 😠 @${msg.author.username}`);
     break;
   }
 }
