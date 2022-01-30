@@ -7,7 +7,7 @@ module.exports = {
     execute(message) {
         const Target = message.mentions.users.first();
 
-        var kletva1 = `Quo facto,\nfacio actum quod debet et maxime\n vult mittere omnia mala ad victimam <@${Target.id}>`;
+        var kletva1 = `Quo facto,\nfacio actum quod debet et maxime\n vult mittere omnia mala ad victimam <@${Target.user.id}>`;
 
         const Response = new MessageEmbed()
             .setAuthor(`${Target.username}`, Target.displayAvatarURL({ dynamic: true }))
