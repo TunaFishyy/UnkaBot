@@ -4,7 +4,6 @@ module.exports = {
     name: 'AntiKletva',
     description: 'CounterAttack .kletva',
     execute(message) {
-
         try {
 
             const Target = message.mentions.users.first();
