@@ -12,7 +12,7 @@ module.exports = {
         } else {
             const embed = new MessageEmbed()
                 .setColor('DARK_BUT_NOT_BLACK')
-                .setTitle(`Bacam kletvu na <@${target.user.id}>`)
+                .setTitle(`Bacam kletvu na <@${target.user.id}>!`)
                 .setDescription(kletva1)
                 .setImage(target.author.avatarURL)
                 .setImage();
