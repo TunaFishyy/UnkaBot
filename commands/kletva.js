@@ -8,7 +8,7 @@ module.exports = {
     execute(message) {
         const target = message.mentions.user.first();
         if (!message.content.toLowerCase().includes(target)) {
-            await message.reply('Moras navesti na koga ces baciti kletvu. **.kletva @user**');
+            message.reply('Moras navesti na koga ces baciti kletvu. **.kletva @user**');
         } else {
             const embed = new MessageEmbed()
                 .setColor('DARK_BUT_NOT_BLACK')
