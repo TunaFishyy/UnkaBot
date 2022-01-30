@@ -27,7 +27,8 @@ const arrayOfStatus = ['M cetiri L C nula L M',
                         'Krtina',
                         'DeCkO dEbiL'];
 
-const arrayOfStatus2 = ['online', 'dnd', 'idle'];
+let arrayOfStatus2 = ['online', 'dnd', 'idle'];
+let count = 0;
 
 client.on('ready', () => {
   console.log(`Bot is online!`);
@@ -35,10 +36,18 @@ client.on('ready', () => {
     client.user.setPresence({ activities: [{
        name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)],
        type: 'PLAYING'
-      }],
-        status: arrayOfStatus2[Math.floor(Math.random()*arrayOfStatus2.length)]
+      }]
     })
   }, 5000);
+    function cycleArray() {
+      let status = arrayOfStatus2[count];
+      client.user.setStatus(status);
+      count++;
+
+      if (count === arrayOfStatus2.length)
+        count = 0;
+    }
+    setInterval(cycleArray, 2500);
 });
 
 client.on('messageCreate', async message => {
