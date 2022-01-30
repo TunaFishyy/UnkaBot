@@ -5,6 +5,8 @@ module.exports = {
     name: 'kletva',
     description: 'Zaklij nekog.',
     execute(message) {
+        try{
+
         const Target = message.mentions.users.first();
 
         var kletva1 = `Quo facto,\nfacio actum quod debet et maxime\n vult mittere omnia mala ad victimam <@${Target.id}>`;
@@ -16,5 +18,10 @@ module.exports = {
             .setDescription(kletva1);
 
             message.reply({ embeds: [Response], allowedMentions: {repliedUser: false} });
+        } catch (error) {
+            message.reply(
+                'Moras unijeti valjane podatke kako bi bacio kletvu. **.kletva @user**'
+            );
+        }
     }
 }
