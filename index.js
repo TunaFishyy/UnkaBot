@@ -72,6 +72,10 @@ client.on('messageCreate', async message => {
       break;
     case 'kletva':
       client.commands.get('kletva').execute(message);
+      break;
+    case 'antikletva':
+      client.commands.get('antikletva').execute(message);
+      break;
   }
 })
 
