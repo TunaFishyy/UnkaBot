@@ -60,7 +60,9 @@ client.on('messageCreate', async message => {
       break;
     case 'ping':
       client.commands.get('ping').execute(message);
-
+      break;
+    case 'kletva':
+      client.command.get('kletva').execute(message);
   }
 })
 
@@ -70,8 +72,7 @@ const forbiddenWords = ['kurac', 'picka', 'pička', 'picko', 'pičko', 'pusi kur
 client.on('messageCreate', (msg) => {
   for (var i = 0; i < forbiddenWords.length; i++) {
   if (msg.content.toLowerCase().includes(forbiddenWords[i])) {
-    // message.content contains a forbidden word;
-    // delete message, log, etc.
+
     msg.delete();
     msg.channel.send(`Ejjjj, nema psovanja 😠 <@${msg.author.id}>`);
     break;
