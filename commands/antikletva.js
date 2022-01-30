@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
-    name: 'AntiKletva',
+    name: 'antikletva',
     description: 'CounterAttack kletva',
     execute(message) {
         try {
