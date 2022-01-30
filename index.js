@@ -62,7 +62,7 @@ client.on('messageCreate', async message => {
       client.commands.get('ping').execute(message);
       break;
     case 'kletva':
-      client.command.get('kletva').execute(message);
+      client.commands.get('kletva').execute(message);
   }
 })
 

@@ -5,8 +5,7 @@ module.exports = {
     name: 'kletva',
     description: 'Zaklij nekog.',
     execute(message) {
-        const Target = message.mentions.users.first() || message.author;
-        const Member = message.guild.members.cache.get(Target.id);
+        const Target = message.mentions.users.first();
 
         var kletva1 = `Quo facto,\nfacio actum quod debet et maxime\n vult mittere omnia mala ad victimam <@${Target.id}>`;
 
