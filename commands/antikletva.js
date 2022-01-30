@@ -6,17 +6,17 @@ module.exports = {
     execute(message) {
         try {
 
-            const Target = message.mentions.users.first();
+            const target = message.mentions.users.first();
 
-        var kletva1 = `Micem kletvu od <@${Target.id}>, te bacam na njega jos JACU!!!`;
+        var kletva2 = `Micem kletvu od <@${target.id}>, te bacam na njega jos JACU!!!`;
 
-        const Response = new MessageEmbed()
-            .setTitle(`Otklecujem <@${Target.id}>`)
-            .setThumbnail(Target.displayAvatarURL({ dynamic: true }))
+        const response = new MessageEmbed()
+            .setTitle(`Otklecujem <@${target.id}>`)
+            .setThumbnail(target.displayAvatarURL({ dynamic: true }))
             .setColor('DARK_BUT_NOT_BLACK')
-            .setDescription(kletva1);
+            .setDescription(kletva2);
 
-            message.reply({ embeds: [Response], allowedMentions: {repliedUser: false} });
+            message.reply({ embeds: [response], allowedMentions: {repliedUser: false} });
 
         } catch (error) {
             message.reply('Koga zelis counterUkleti? **.antikletva @user**')
