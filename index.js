@@ -47,7 +47,7 @@ client.on('ready', () => {
       if (count === arrayOfStatus2.length)
         count = 0;
     }
-    setInterval(cycleArray, 2500);
+    setInterval(cycleArray, 5000);
 });
 
 client.on('messageCreate', async message => {
