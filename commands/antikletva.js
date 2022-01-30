@@ -8,7 +8,7 @@ module.exports = {
 
             const target = message.mentions.users.first();
 
-        var kletva2 = `Micem kletvu od <@${target.id}>, te bacam na njega jos JACU!!!`;
+        var kletva2 = `Micem kletvu od <@${target.id}>, te bacam na nj jos JACU!!!`;
 
         const response = new MessageEmbed()
             .setTitle(`Otklecujem <@${target.id}>`)

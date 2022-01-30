@@ -6,7 +6,7 @@ module.exports = {
     execute(message) {
         const embed = new MessageEmbed()
             .setTitle('Help Meni')
-            .setDescription('Prefix: **.**\nKomande: **mrs**, **debelsi**, **kletva**')
+            .setDescription('Prefix: **.**\nKomande: **mrs**, **debelsi**, **kletva**, **antikletva**')
             .setColor('AQUA');
  
         message.reply({embeds: [embed], allowedMentions: {repliedUser: false}})
