@@ -10,7 +10,6 @@ module.exports = {
         var kletva1 = `Quo facto,\nfacio actum quod debet et maxime\n vult mittere omnia mala ad victimam <@${message.mentions.users.first.name}>`;
 
         const Response = new MessageEmbed()
-            .setAuthor(`${Target.username}`, Target.displayAvatarURL({ dynamic: true }))
             .setThumbnail(Target.displayAvatarURL({ dynamic: true }))
             .setColor('DARK_BUT_NOT_BLACK')
             .setDescription(kletva1);
