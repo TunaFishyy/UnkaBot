@@ -86,8 +86,8 @@ client.on('messageCreate', (msg) => {
   for (var i = 0; i < forbiddenWords.length; i++) {
   if (msg.content.toLowerCase().includes(forbiddenWords[i])) {
 
-    msg.delete();
-    msg.channel.send(`Ejjjj, nema psovanja 😠 <@${msg.author.id}>`);
+    //msg.delete();
+    //msg.channel.send(`Ejjjj, nema psovanja 😠 <@${msg.author.id}>`);
     break;
   }
 }
