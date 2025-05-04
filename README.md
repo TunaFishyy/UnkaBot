@@ -1,2 +1,2 @@
 # UnkaBot
-A Discord bot made for a private Discord
+A Discord bot made for a private Discord server
